@@ -1,3 +1,7 @@
+![preview_1](./assets/images/Screenshot_1.png)
+![preview_2](./assets/images/Screenshot_2.png)
+![preview_3](./assets/images/Screenshot_3.png)
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
