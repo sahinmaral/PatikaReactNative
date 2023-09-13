@@ -11,13 +11,18 @@ import useFetch from '../../hooks/useFetch';
 import Loading from '../Loading';
 import {useMemo} from 'react';
 import styles from './styles';
+import {API_URL} from "@env"
+import useCheckInternet from '../../hooks/useCheckInternet';
+import CheckInternet from '../CheckInternet';
 
-function MealDetail({navigation, route}) {
+function MealDetail({route}) {
   const {mealId} = route.params;
 
   const {fetchResult, loading, error} = useFetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`,
+    `${API_URL}/lookup.php?i=${mealId}`,
   );
+
+  const {isConnected} = useCheckInternet()
 
   const mealDetail = useMemo(() => {
     if (fetchResult != null) {
@@ -29,6 +34,10 @@ function MealDetail({navigation, route}) {
   const redirectToYoutube = url => {
     Linking.openURL(url);
   };
+
+  if(!isConnected){
+    return <CheckInternet />
+  }
 
   if (loading) {
     return <Loading />;

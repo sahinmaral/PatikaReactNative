@@ -2,13 +2,22 @@ import {SafeAreaView, FlatList} from 'react-native';
 import useFetch from '../../hooks/useFetch';
 import Loading from '../Loading';
 import MealCard from '../../components/MealCard';
+import {API_URL} from "@env"
+import useCheckInternet from '../../hooks/useCheckInternet';
+import CheckInternet from '../CheckInternet';
 
 function CategoryDetail({navigation, route}) {
   const {categoryName} = route.params;
 
   const {fetchResult, loading, error} = useFetch(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`,
+    `${API_URL}/filter.php?c=${categoryName}`,
   );
+
+  const {isConnected} = useCheckInternet()
+
+  if(!isConnected){
+    return <CheckInternet />
+  }
 
   if (loading) {
     return <Loading />;

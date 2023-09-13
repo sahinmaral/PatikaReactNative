@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {SafeAreaView, FlatList} from 'react-native';
 import useFetch from '../../hooks/useFetch';
 import CategoryCard from '../../components/CategoryCard';
 import Loading from '../Loading';
 import Error from '../Error';
+import {API_URL} from "@env"
+import useCheckInternet from '../../hooks/useCheckInternet';
+import CheckInternet from '../CheckInternet';
 
 function CategoryList({navigation}) {
+
   const {fetchResult, loading, error} = useFetch(
-    'https://www.themealdb.com/api/json/v1/1/categories.php',
+    `${API_URL}/categories.php`,
   );
+
+  const {isConnected} = useCheckInternet()
+
+  if(!isConnected){
+    return <CheckInternet />
+  }
 
   if (loading) {
     return <Loading />;

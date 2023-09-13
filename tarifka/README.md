@@ -3,6 +3,7 @@
 ![preview_3](./assets/images/Screenshot_3.png)
 ![preview_4](./assets/images/Screenshot_4.png)
 ![preview_5](./assets/images/Screenshot_5.png)
+![preview_6](./assets/images/Screenshot_6.png)
 
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
