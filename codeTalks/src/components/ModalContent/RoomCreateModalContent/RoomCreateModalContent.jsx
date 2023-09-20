@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Button from '../../Button';
-import {Text, TextInput, View} from 'react-native';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import styles from './RoomCreateModalContent.styles';
 import database from '@react-native-firebase/database';
 import {showMessage} from 'react-native-flash-message';
@@ -40,7 +40,7 @@ function RoomCreateModalContent({rooms, toggleModal}) {
   };
 
   return (
-    <View style={styles.modal.container}>
+    <TouchableOpacity style={styles.modal.container} activeOpacity={1} onPress={(event) => event.stopPropagation()}>
       <View>
         <TextInput
           value={name}
@@ -58,7 +58,7 @@ function RoomCreateModalContent({rooms, toggleModal}) {
         style={styles.modal.button}
         onPress={handleCreateRoom}
       />
-    </View>
+    </TouchableOpacity>
   );
 }
 

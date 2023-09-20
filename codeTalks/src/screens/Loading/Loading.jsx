@@ -17,7 +17,7 @@ function Loading({styles}) {
           textAlign: 'center',
           fontWeight: 'bold',
         },styles.text]}>
-        Loading ...
+        Yükleniyor ...
       </Text>
     </View>
   );

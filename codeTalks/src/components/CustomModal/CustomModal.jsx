@@ -11,7 +11,7 @@ function CustomModal({children,toggleModal,modalVisible}) {
       <TouchableOpacity
         style={styles.modal.overlay}
         activeOpacity={1}
-        onPress={(event) => event.stopPropagation()}>
+        onPress={toggleModal}>
         {children}
       </TouchableOpacity>
     </Modal>

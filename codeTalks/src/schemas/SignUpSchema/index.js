@@ -11,7 +11,7 @@ const validationSchema = Yup.object().shape({
     .required('Şifrenizi giriniz')
     .min(6, 'Şifre minimum 6 karakter olmalıdır')
     .matches(
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^*-]).{6,}$/,
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[.#?!@$%^*-]).{6,}$/,
       'Şifreniz en az bir büyük harf, küçük harf, rakam ve özel karakter içermelidir',
     ),
   passwordConfirm: Yup.string()

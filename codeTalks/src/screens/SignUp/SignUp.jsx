@@ -13,10 +13,10 @@ import mapObjectAsArray from '../../utils/firebase/realtimeDatabaseMapper';
 
 function SignUp({navigation}) {
   const initialValues = {
-    email: 'sahinmaral14@hotmail.com',
-    username: 'sahinmaral14',
-    password: 'Abc1234.',
-    passwordConfirm: 'Abc1234.',
+    email: '',
+    username: '',
+    password: '',
+    passwordConfirm: '',
   };
 
   const [loading, setLoading] = useState(false);
