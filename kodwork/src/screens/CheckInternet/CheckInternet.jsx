@@ -1,7 +1,7 @@
 import LottieView from 'lottie-react-native';
 import {View, Text, Dimensions} from 'react-native';
 
-function CheckInternet({error}) {
+function CheckInternet() {
   return (
     <View style={{flex: 1, flexDirection: 'column', alignItems: 'center'}}>
       <LottieView
