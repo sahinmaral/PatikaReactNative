@@ -42,6 +42,7 @@ function Login({navigation}) {
       });
       navigation.navigate('RoomList');
     } catch (error) {
+      console.log(error.code)
       showMessage({
         message: parseFirebaseError(error),
         type: 'danger',
